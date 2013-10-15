@@ -18,22 +18,19 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $userManager = $this->container->get('fos_user.user_manager');
         $user = $userManager->createUser();
-        $post = new Order();
 
-        $form = $this->createForm(new OrderFormType(), $post);
         $user_form = $this->createForm(new RegistrationFormType($user));
+        $user_form ->setData($user);
         if ($request->getMethod() == 'POST') {
-            $form->bind($request);
             $user_form->bind($request);
 
-            if ($form->isValid()) {
-
+            if ($user_form ->isValid()) {
+                $user->setUsername('sdf222sf2');
                 $user->setPassword('sdfsf2');
+                $userManager->updateUser($user);
                 $em->persist($user_form->getData());
                 $em->flush();
-                $userManager->updateUser($user);
 
-                $em->flush();
 
 
 
@@ -43,7 +40,7 @@ class DefaultController extends Controller
             }
         }
 
-        return $this->render('VipSiteBundle:Default:index.html.twig', array('form' => $form->createView(),'form_user' => $user_form->createView(),));
+        return $this->render('VipSiteBundle:Default:index.html.twig', array('form_user' => $user_form->createView(),));
 
 
     }
