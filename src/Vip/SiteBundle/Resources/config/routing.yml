@@ -1,6 +1,6 @@
 vip_site_homepage:
     pattern:  /
-    defaults: { _controller: VipUserBundle:Registration:register }
+    defaults: { _controller: VipSiteBundle:Default:index }
 vip_site_cp:
     pattern:  /cp
     defaults: { _controller: VipSiteBundle:Default:cp}
