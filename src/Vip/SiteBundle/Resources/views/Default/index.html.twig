@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <title>Bootstrap 101 Шаблон</title>
+    <!-- Bootstrap -->
+    <link href="{{ app.request.basePath }}/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="{{ app.request.basePath }}/css/style.css" rel="stylesheet" media="screen">
+
+    <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+        var myMap,
+                myPlacemark;
+
+        function init(){
+            myMap = new ymaps.Map ("map", {
+                center: [54.723694, 20.499163],
+                zoom: 16
+            });
+
+            myPlacemark = new ymaps.Placemark([54.723694, 20.499163], {
+                hintContent: 'Срочные выписки',
+                balloonContent: 'Срочные выписки. Советский проспект 16, офис 306'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script src="{{ app.request.basePath }}/js/jquery.parallax.js"></script>
+    <script>
+        jQuery(document).ready(function(){
+            jQuery('#parallax .parallax-layer')
+                    .parallax({
+                        mouseport: jQuery('#parallax')
+                    });
+        });
+    </script>
+    {% endblock %}
+</head>
+
+<body>
+<div id="wrap">
+
+    <div class="top-offset">
+    </div>
+
+    <div class="grey">
+        <div class="span4 logo offset2"><img src="{{ app.request.basePath }}/img/logo.png"></div>
+        <div class="span5 phone offset6"><span>Звоните нам (4012)900-326</span></div>
+        <div class="span4"><div class="cp"><img src="{{ app.request.basePath }}/img/cp.png">Личный кабинет</div></div>
+    </div>
+
+    <div class="parallax-viewport" id="parallax">
+
+        <div class="parallax-layer">
+            <img src="{{ app.request.basePath }}/img/1.jpg" alt="" />
+        </div>
+        <div class="parallax-layer">
+            <p class="one">Сервис оформления выписок из ЕГРЮЛ, ЕГРИП, а также,</p><p class="two"> заказ копии Устава из налоговой.</p>
+        </div>
+
+    </div>
+    {% block home %}
+{% block akcia %}
+    <div class="span3 akcia offset2">
+        <img src="{{ app.request.basePath }}/img/akcia.png" alt="акция">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span9 offset2 text-center"><h1>До конца 2013 года доставка выписки осуществляется<br/> БЕСПЛАТНО!</h1>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    {% block forms %}
+        <form action="{{ path('vip_site_homepage') }}" method="post" {{ form_enctype(form) }}>
+    <div class="green">
+        <div class="container">
+            <div class="row">
+                <div class="span6">
+
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.name, null, {'label': 'Наименование организации', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+                            <div class="span3">
+                                {{ form_widget(form.name) }}
+                            </div>
+                        </div>
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.ogrn, null, {'label': 'ОГРН/ОГРНИП', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+                            <div class="span3">
+                                {{ form_widget(form.ogrn) }}
+                            </div>
+                        </div>
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.inn, null, {'label': 'ИНН', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+                            <div class="span3">
+                                {{ form_widget(form.inn) }}
+                            </div>
+                        </div>
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.count, null, {'label': 'Количество', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+                            <div class="span3">
+                                {{ form_widget(form.count) }}
+                            </div>
+                        </div>
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.term, null, {'label': 'Тип услуги', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+
+                            <div class="span3">
+                                {% for item in form.term %}
+
+                                    <div class="sub-control"><div class="my-radio">{{ form_widget(item) }}</div><div class="my-label">{{ form_label(item) }}</div></div>
+
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.speed, null, {'label': 'Срочность', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+
+                            <div class="span3">
+                                {% for item in form.speed %}
+
+                                    <div class="sub-control"><div class="my-radio">{{ form_widget(item) }}</div><div class="my-label">{{ form_label(item) }}</div></div>
+
+                                {% endfor %}
+                            </div>
+                        </div>
+
+
+
+                </div>
+
+                <div class="span6">
+
+
+
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form_user.phone, null, {'label': 'Телефон', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+
+                            <div class="span3">
+                                {{ form_widget(form_user.phone) }}
+
+                            </div>
+
+                        </div>
+
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form_user.username, null, {'label': 'Имя пользователя', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+
+                            <div class="span3">
+                                {{ form_widget(form_user.username) }}
+
+                            </div>
+
+                        </div>
+
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form_user.email, null, {'label': 'Email', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+
+                            <div class="span3">
+                                {{ form_widget(form_user.email) }}
+
+                            </div>
+                        </div>
+
+
+                        <div class="row bottom-offset">
+                                <div class="span3">
+                                    {{ form_label(form.dostavka, null, {'label': 'Доставка', 'label_attr': {'class':'my-label-right'}}) }}
+                                </div>
+
+                                <div class="span3">
+                                    {% for item in form.dostavka %}
+
+                                        <div class="sub-control"><div class="my-radio">{{ form_widget(item) }}</div><div class="my-label">{{ form_label(item) }}</div></div>
+
+                                    {% endfor %}
+                                </div>
+                            </div>
+                    <div class="row bottom-offset my-label-right">
+                        <input type="submit" value="Отправить">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+        </form>
+    {% endblock %}
+    {% block other_terms %}
+    <div class="grey"><div class="container"><p class="other">Другие услуги</p></div></div>
+    <div class="container other-image">
+        <div class="row">
+            <div class="span3"><img src ="{{ app.request.basePath }}/img/terms1.png"/><p><a href="/">Название услугие</a></p></div>
+            <div class="span3"><img src ="{{ app.request.basePath }}/img/terms2.png"/><p><a href="/">Название услугие</a></p></div>
+            <div class="span3"><img src ="{{ app.request.basePath }}/img/terms3.png"/><p><a href="/">Название услугие</a></p></div>
+            <div class="span3"><img src ="{{ app.request.basePath }}/img/terms4.png"/><p><a href="/">Название услугие</a></p></div>
+
+        </div>
+    </div>
+    {% endblock %}
+    {% block map %}
+    <div id="map" style="height: 30em"></div>
+    {% endblock %}
+    {% endblock %}
+</div>
+<div id="footer">
+    <div class="container footer-content">
+        <img alt="срочные выписки" src="{{ app.request.basePath }}/img/footer-logo.png"/><span>г.Калининград, ул. Советский проспект, д.16, офис 306</span>
+    </div>
+</div>
+
+<script src="{{ app.request.basePath }}/js/bootstrap.min.js"></script>
+</body>
+</html>

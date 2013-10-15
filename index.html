@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 101 Шаблон</title>
+    <!-- Bootstrap -->
+    <link href="web/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="web/css/style.css" rel="stylesheet" media="screen">
+
+    <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+        var myMap,
+                myPlacemark;
+
+        function init(){
+            myMap = new ymaps.Map ("map", {
+                center: [54.723694, 20.499163],
+                zoom: 16
+            });
+
+            myPlacemark = new ymaps.Placemark([54.723694, 20.499163], {
+                hintContent: 'Срочные выписки',
+                balloonContent: 'Срочные выписки. Советский проспект 16, офис 306'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <script src="web/js/jquery.parallax.js"></script>
+    <script>
+        jQuery(document).ready(function(){
+            jQuery('#parallax .parallax-layer')
+                    .parallax({
+                        mouseport: jQuery('#parallax')
+                    });
+        });
+    </script>
+</head>
+<body>
+<div id="wrap">
+
+            <div class="top-offset">
+            </div>
+
+        <div class="grey">
+            <div class="span4 logo offset2"><img src="web/img/logo.png"></div>
+            <div class="span5 phone offset6"><span>Звоните нам (4012)900-326</span></div>
+            <div class="span4"><div class="cp"><img src="web/img/cp.png">Личный кабинет</div></div>
+        </div>
+
+            <div class="parallax-viewport" id="parallax">
+
+                <div class="parallax-layer">
+                    <img src="web/img/1.jpg" alt="" />
+                </div>
+                <div class="parallax-layer">
+                    <p class="one">Сервис оформления выписок из ЕГРЮЛ, ЕГРИП, а также,</p><p class="two"> заказ копии Устава из налоговой.</p>
+                </div>
+
+            </div>
+
+
+            <div class="span3 akcia offset2">
+            <img src="web/img/akcia.png" alt="акция">
+            </div>
+    <div class="container">
+        <div class="row">
+            <div class="span9 offset2 text-center"><h1>До конца 2013 года доставка выписки осуществляется<br/> БЕСПЛАТНО!</h1>
+            </div>
+        </div>
+    </div>
+    <div class="green">
+        <div class="container">
+            <div class="row">
+            <div class="span6">
+                <form class="form-horizontal">
+                    <div class="element-form">
+                        <label class="my-label">Email</label>
+                        <div class="control-form">
+                            <input type="text" name="inputEmail">
+                        </div>
+                    </div>
+
+                    <div class="element-form">
+                        <label class="my-label">Email</label>
+                        <div class="control-form">
+                            <input type="text" name="inputEmail">
+                        </div>
+                    </div>
+
+                    <div class="element-form">
+                        <label class="my-label">Email sd sd sd Email sd sd sd</label>
+                        <div class="control-form">
+                            <input type="text" name="inputEmail">
+                        </div>
+                    </div>
+
+                    <div class="element-form">
+                        <label class="my-label">sl</label>
+                        <div class="control-form">
+                            <input type="text" name="inputEmail">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="span6">
+                <form class="form-horizontal">
+                    <div class="element-form">
+                        <label class="my-label">Email</label>
+                        <div class="control-form">
+                            <input type="text" name="inputEmail">
+                        </div>
+                    </div>
+
+                    <div class="element-form">
+                        <label class="my-label">Email</label>
+                        <div class="control-form">
+                            <input type="text" name="inputEmail">
+                        </div>
+                    </div>
+
+                    <div class="element-form">
+                        <label class="my-label">Email sd sd sd Email sd sd sd</label>
+                        <div class="control-form">
+                            <input type="text" name="inputEmail">
+                        </div>
+                    </div>
+
+                    <div class="element-form">
+                        <label class="my-label">sl</label>
+                        <div class="control-form">
+                            <input type="text" name="inputEmail">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="grey"><div class="container"><p class="other">Другие услуги</p></div></div>
+    <div class="container other-image">
+        <div class="row">
+        <div class="span3"><img src ="web/img/terms1.png"/><p><a href="/">Название услугие</a></p></div>
+        <div class="span3"><img src ="web/img/terms2.png"/><p><a href="/">Название услугие</a></p></div>
+        <div class="span3"><img src ="web/img/terms3.png"/><p><a href="/">Название услугие</a></p></div>
+        <div class="span3"><img src ="web/img/terms4.png"/><p><a href="/">Название услугие</a></p></div>
+
+        </div>
+    </div>
+    <div id="map" style="height: 30em"></div>
+</div>
+<div id="footer">
+    <div class="container footer-content">
+        <img alt="срочные выписки" src="web/img/footer-logo.png"/><span>г.Калининград, ул. Советский проспект, д.16, офис 306</span>
+    </div>
+</div>
+
+<script src="web/js/bootstrap.min.js"></script>
+</body>
+</html>

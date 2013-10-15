@@ -1,0 +1,243 @@
+html,body{
+    height: 100%;
+    font-family: Arial;
+}
+h1{
+    color:#7b7872;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+#wrap {
+    height: auto !important;
+    margin: 0 auto -8em;
+    min-height: 100%;
+
+}
+#footer {
+    background: url(../img/footer-bg.jpg) no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+
+}
+#push, #footer {
+    height: 8em;
+}
+#footer img{
+    vertical-align: middle;
+    padding-right: 25px;
+}
+.footer-content{
+     line-height: 8em;
+ }
+.footer-content span{
+    font-size: 1.5em;
+    color:#000;
+}
+.container .credit {
+    margin: 20px 0;
+}
+.top-offset{
+    height: 30px;
+}
+.grey{
+    background: #f7f7f7;
+    height: 60px;
+}
+.logo{
+    position: absolute;
+    top:1.5em;
+
+    z-index: 900;
+}
+.akcia{
+    position: absolute;
+    top:19.2em;
+    z-index: 900;
+}
+.akcia img{
+    padding-left:0;
+}
+.phone{
+    height:60px;
+    background: url('../img/phone.png') no-repeat;
+    background-position: left;
+}
+.phone span{
+    line-height:60px;
+    padding-left: 50px;
+    font-size: 12px;
+}
+.cp{
+    height:40px;
+    background: #009bdf;
+    color: #fff;
+    border-radius:22px;
+    -webkit-border-radius:22px;
+    -moz-border-radius:22px;
+    -khtml-border-radius:22px;
+    behavior: url(../js/PIE.htc);
+    width: 200px;
+    margin: 10px 0;
+    line-height: 40px;
+
+}
+.cp:hover{
+    background: #008cc9;;
+}
+.cp img{
+    padding: 0 10px 0 20px;
+}
+.cp a{
+    color: #fff;
+    text-decoration: none;
+}
+.parallax-viewport {
+    width: 100%;
+    height: 14em;
+    background:#fff;
+    z-index: 300;
+}
+.parallax-viewport {
+    position: relative;
+    overflow: hidden;
+}
+.parallax-layer {
+    z-index: 300;
+    position: absolute;
+}
+.parallax-layer .one{
+    display: block;
+    margin: 4em 18em 1em;
+
+    font-size: 1.5em;
+}
+.parallax-layer .two{
+    display: block;
+    margin: 1em 18em;
+
+    font-size: 1.5em;
+}
+.green{
+    background: #1da3a9;
+    overflow: hidden;
+    padding: 1.5em 0 4em;
+}
+
+
+.my-label-right {
+    vertical-align: middle;
+    color:#fff;
+    text-align: right;
+    line-height: 1.6em;
+}
+
+input{
+    height: 1.6em;
+    background: #117e8d!important;
+    border: none!important;
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.6)!important;
+}
+p.other{
+    padding: 15px 0;
+    font-size: 1.5em;
+}
+.other-image{
+    padding:40px 0 40px 0;
+    text-align: center;
+
+}
+.other-image a{
+    color:#a5a5a5;
+    font-size: 1.1em;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 10px;
+    display: block;
+}
+#map{
+    padding-bottom: 8em;
+}
+.table-title{
+
+}
+.table-title td{
+    width: 300px;
+    border: 2px solid #008cc9;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    line-height: 2em;
+}
+.table-order{
+    border-bottom: 2px solid #008cc9;
+    border-left: 2px solid #008cc9;
+    border-right: 2px solid #008cc9;
+    margin-top: -2px;
+    margin-left:19px;
+}
+.table-order tr{
+    border-bottom: 1px solid #008cc9;
+}
+.table-order td{
+    width: 300px;
+    text-align: center;
+    padding: 0.5em 0;
+
+}
+.cp-content{
+    padding-bottom: 12em;
+
+}
+a.button{
+    display: block;
+    background: #f4f4f4;
+    color: #1da3a9;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -khtml-border-radius:5px;
+    behavior: url(../js/PIE.htc);
+}
+a.button2{
+    display: block;
+    background: #008cc9;
+    color: #fff;
+    height: 35px;
+    line-height: 35px;
+    width:140px;
+    margin-left: 7em;
+    border-radius:7px;
+    -webkit-border-radius:7px;
+    -moz-border-radius:7px;
+    -khtml-border-radius:7px;
+    behavior: url(../js/PIE.htc);
+}
+.my-radio{
+    float: left;
+    text-align: left;
+    padding: 0 7px;
+}
+.my-radio input{
+    margin: 0;
+}
+.sub-control{
+    overflow: hidden;
+
+}
+.sub-control label{
+    text-align: left!important;
+    color: #fff;
+    font-size: 0.85em;
+
+}
+.control-block{
+    float: left;
+}
+.bottom-offset{
+    margin-bottom: 20px;
+}
+input{
+    color:#fff!important;
+}

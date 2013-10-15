@@ -1,0 +1,12 @@
+vip_site_homepage:
+    pattern:  /
+    defaults: { _controller: VipSiteBundle:Default:index }
+vip_site_cp:
+    pattern:  /cp
+    defaults: { _controller: VipSiteBundle:Default:cp}
+vip_site_order:
+    pattern:  /order/{id}
+    defaults: { _controller: VipSiteBundle:Default:cp }
+    requirements:
+            id: \d+
+
