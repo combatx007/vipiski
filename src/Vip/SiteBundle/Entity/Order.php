@@ -102,6 +102,14 @@ class Order
     }
 
     /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getTerm();
+    }
+
+    /**
      * Set inn
      *
      * @param string $inn

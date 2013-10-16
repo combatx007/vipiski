@@ -30,9 +30,10 @@ class Term
      */
     private $orders;
 
-    public function __construct()
+    public function __construct($name)
     {
         $this->orders = new ArrayCollection();
+        $this->name = $name;
     }
 
     /**
@@ -41,6 +42,7 @@ class Term
     public function __toString()
     {
         return $this->getName();
+
     }
     /**
      * Get id

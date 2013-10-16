@@ -77,14 +77,70 @@
     </div>
     {% endblock %}
     {% block forms %}
-        <form action="{{ path('vip_site_homepage') }}" method="post" {{ form_enctype(form_user) }}>
+        <form action="{{ path('vip_site_homepage') }}" method="post" {{ form_enctype(form) }}>
     <div class="green">
         <div class="container">
             <div class="row">
                 <div class="span6">
 
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.name, null, {'label': 'Наименование организации', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+                            <div class="span3">
+                                {{ form_widget(form.name) }}
+                            </div>
+                        </div>
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.ogrn, null, {'label': 'ОГРН/ОГРНИП', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+                            <div class="span3">
+                                {{ form_widget(form.ogrn) }}
+                            </div>
+                        </div>
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.inn, null, {'label': 'ИНН', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+                            <div class="span3">
+                                {{ form_widget(form.inn) }}
+                            </div>
+                        </div>
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.count, null, {'label': 'Количество', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+                            <div class="span3">
+                                {{ form_widget(form.count) }}
+                            </div>
+                        </div>
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.term, null, {'label': 'Тип услуги', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
 
+                            <div class="span3">
+                                {% for item in form.term %}
 
+                                    <div class="sub-control"><div class="my-radio">{{ form_widget(item) }}</div><div class="my-label">{{ form_label(item) }}</div></div>
+
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="row bottom-offset">
+                            <div class="span3">
+                                {{ form_label(form.speed, null, {'label': 'Срочность', 'label_attr': {'class':'my-label-right'}}) }}
+                            </div>
+
+                            <div class="span3">
+                                {% for item in form.speed %}
+
+                                    <div class="sub-control"><div class="my-radio">{{ form_widget(item) }}</div><div class="my-label">{{ form_label(item) }}</div></div>
+
+                                {% endfor %}
+                            </div>
+                        </div>
 
 
 
@@ -130,7 +186,20 @@
                         </div>
 
 
+                        <div class="row bottom-offset">
+                                <div class="span3">
+                                    {{ form_label(form.dostavka, null, {'label': 'Доставка', 'label_attr': {'class':'my-label-right'}}) }}
+                                </div>
 
+                                <div class="span3">
+                                    {% for item in form.dostavka %}
+
+                                        <div class="sub-control"><div class="my-radio">{{ form_widget(item) }}</div><div class="my-label">{{ form_label(item) }}</div></div>
+
+                                    {% endfor %}
+                                </div>
+                            </div>
+                </div>
                     <div class="row bottom-offset my-label-right">
                         <input type="submit" value="Отправить">
                     </div>
