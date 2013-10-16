@@ -38,18 +38,18 @@ class DefaultController extends Controller
                     ->setEnabled(true)
                     ->setPhone($user_form->getData()->getPhone());
                 $em->persist($user);
-                $em->flush();
 
-                $form->bind($request);
+
+            $form->bind($request);
             $term = new Term('asdfasdf');
-            $order->setUser($user);
+
             $order->setCount($form->getData()->getCount());
             $order->setInn($form->getData()->getInn());
             $order->setOgrn($form->getData()->getOgrn());
             $order->setName($form->getData()->getName());
             $order->setDostavka($form->getData()->getDostavka());
             $order->setSpeed($term);
-            ld($order->setSpeed($term));
+            $order->setUser($user);
 
 
             $em->persist($order);

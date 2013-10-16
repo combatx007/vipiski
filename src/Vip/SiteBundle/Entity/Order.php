@@ -5,6 +5,7 @@ namespace Vip\SiteBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 use Vip\SiteBundle\Entity\Term;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 
 /**
@@ -41,7 +42,7 @@ class Order
     protected $count;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Vip\UserBundle\Entity\User", inversedBy="orders")
+     * @ORM\ManyToOne(targetEntity="Vip\UserBundle\Entity\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $user;
@@ -158,10 +159,10 @@ class Order
     /**
      * Set user
      *
-     * @param string $user
-     * @return Order
+     * @param UserInterface $user
+     * @return $this
      */
-    public function setUser($user)
+    public function setUser(UserInterface $user)
     {
         $this->user = $user;
 
@@ -171,7 +172,7 @@ class Order
     /**
      * Get user
      *
-     * @return string
+     * @return mixed
      */
     public function getUser()
     {
