@@ -42,7 +42,7 @@ class DefaultController extends Controller
 
                 $form->bind($request);
             $term = new Term('asdfasdf');
-            $order->setUser($user);
+            $order->setUser($user->getId());
             $order->setCount($form->getData()->getCount());
             $order->setInn($form->getData()->getInn());
             $order->setOgrn($form->getData()->getOgrn());
